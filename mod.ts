@@ -45,8 +45,8 @@ export class Event<T extends unknown[] = []> {
 	public async dispatch(...args: T) {
 		for (const [listener, once] of this._subscriptions) {
 			try {
-				await listener(...args);
 				if (once) this._subscriptions.delete(listener);
+				await listener(...args);
 			} catch (error) {
 				console.error(error);
 			}
