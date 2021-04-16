@@ -17,10 +17,12 @@ await myEvent.dispatch();
 `for await` style:
 
 ```ts
-for await (const [] of myEvent)
+const listener = myEvent.listener();
+for await (const [] of listener)
 {
 	console.log("Hello");
 }
+listener.close();
 ```
 
 ## Usecase example:
