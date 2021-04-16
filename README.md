@@ -17,7 +17,7 @@ await myEvent.dispatch();
 `for await` style:
 
 ```ts
-const listener = myEvent.listener();
+const listener = myEvent.async();
 for await (const [] of listener)
 {
 	console.log("Hello");
